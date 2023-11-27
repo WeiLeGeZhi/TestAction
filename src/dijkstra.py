@@ -1,13 +1,10 @@
 import heapq
-
 def dijkstra(graph, start, end):
     # using heap to finish dijkstra
     heap = [(0, start)]
     visited = set()
-
     while heap:
         (cost, current) = heapq.heappop(heap)
-
         if current in visited:
             continue
 
