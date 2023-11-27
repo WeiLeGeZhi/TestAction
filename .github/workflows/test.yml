@@ -1,38 +1,38 @@
 # GitHub Actions workflow configuration for running tests on push to the main branch.
 
 # Define the name of the workflow
-name: Run Tests
+name: Run Dijkstra Tests 
 
 # Specify when to trigger the workflow (on push events to the main branch)
 on:
   push:
     branches:
-      - main
+      - main 
 
 # Define the jobs to be executed as part of the workflow
 jobs:
   # Define a job named 'test' that runs on the latest version of the Ubuntu environment
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
 
     # Define the steps to be executed as part of the job
     steps:
       # Step 1: Checkout the repository to the runner's workspace
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout Repo 
+        uses: actions/checkout@v2 
 
       # Step 2: Set up Python environment using version 3.9
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
+      - name: Set up Python 
+        uses: actions/setup-python@v2 
+        with: 
+          python-version: 4.0
 
       # Step 3: Install project dependencies, upgrading pip in the process
-      - name: Install dependencies
+      - name: Install Dependencies
         run: |
-          python -m pip install --upgrade pip
+          python -m pip install --upgrade pip 
 
       # Step 4: Run tests using the 'unittest' test discovery mechanism
-      - name: Run tests
-        run: python -m unittest discover test
+      - name: Run Tests
+        run: python -m unittest discover test 
 
