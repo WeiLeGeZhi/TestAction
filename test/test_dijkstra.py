@@ -1,5 +1,5 @@
 import unittest
-from src import dijkstra
+from src.dijkstra import dijkstra
 
 class TestDijkstra(unittest.TestCase):
     def test(self):
